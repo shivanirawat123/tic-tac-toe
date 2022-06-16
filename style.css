@@ -1,0 +1,74 @@
+body{
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    font-size: 16px;
+    font-family: fantasy;
+}
+*,*::before,*::after{
+    box-sizing: border-box;
+}
+.br-0{
+    border-right: 0 !important;
+}
+.bt-0{
+    border-top: 0 !important;
+}
+.d-none{
+    display: none !important;
+}
+.btn{
+    padding: 0.5rem 1rem;
+    background-color: lightblue;
+    border: 1px solid lightgray;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+.btn:disabled{
+    cursor: not-allowed;
+}
+.cell-wrap{
+    display: flex;
+    margin: 0 auto;
+    width: 9rem;
+    flex-wrap: wrap;
+}
+.cell{
+    border: 1px solid;
+    border-width: 1px 1px 0 0;
+    width: 3rem;
+    height: 3rem;
+    cursor: pointer;
+    position: relative;
+}
+.cell.played{
+    cursor: not-allowed;
+}
+.cell.played::before{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+}
+.cell.played.cross::before{
+    content: "X";
+}
+.cell.played.circle::before{
+    content: "O";
+}
+.cell.transform::after{
+   content: "";
+   position: absolute;
+   top:0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background: linear-gradient(var(--backgroundDir,to bottom left),
+   rgba(0,0,0,0) 0%,
+   rgba(0,0,0,0) calc(50% - 0.9px),
+   rgba(0,0,0,1) 50%,
+   rgba(0,0,0,0) calc(50% + 0.9px),
+   rgba(0,0,0,0) 100%);
+}
+
